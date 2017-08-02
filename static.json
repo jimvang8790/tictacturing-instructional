@@ -1,3 +1,4 @@
+/*Routing clean URLs*/
 {
   "root": "build/",
   "clean_urls": false,
