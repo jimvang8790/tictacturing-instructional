@@ -16,10 +16,10 @@ class TicTacToe extends Component {
   }
 
   componentWillMount() {
-    // when my component mounts
+    // when my component mounts do these to the DOM
     let height = window.innerHeight // size of bowser's vertically
-    let width = window.innerWidh
-    let size = (height < width) ? height * .9 : width * .8
+    let width = window.innerWidth
+    let size = (height < width) ? height * .8 : width * .8
     let rows = this.state.rows
     let unit = size / rows
 
@@ -28,30 +28,30 @@ class TicTacToe extends Component {
       rows,
       unit
     }) //end this.setState
-  }
+  };
 
   move = () => {
     // placeholder
-  }
+  };
 
   makeAiMove = () => {
     // placeholder
-  }
+  };
 
   turingTest = () => {
     // placeholder
-  }
+  };
 
   recordGame = () => {
     // placeholder
-  }
+  };
 
   render() {
     let {
       size,
       unit,
       rows
-    } = this.state
+    } = this.state;
     return (
       <div>
         <Stage
