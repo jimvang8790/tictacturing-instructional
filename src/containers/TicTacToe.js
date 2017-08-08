@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
 import {Stage} from 'react-konva';
+import {Board} from '../styled/TicTacToe'
 
 class TicTacToe extends Component {
 
   state = {
-    rows: 3
+    rows: 3,
+    gameState: new Array(9).fill(false),
+    ownMark: 'X',
+    otherMark: 'O',
+    gameOver: false,
+    yourTurn: true,
+    winner: false,
+    win: false
   }
 
   componentWillMount() {
@@ -18,7 +26,7 @@ class TicTacToe extends Component {
     this.setState({
       size,
       rows,
-      units
+      unit
     }) //end this.setState
   }
 
@@ -39,14 +47,23 @@ class TicTacToe extends Component {
   }
 
   render() {
+    let {
+      size,
+      unit,
+      rows
+    } = this.state
     return (
       <div>
         <Stage
-          width = {}
-          height = {}
+          width={size}
+          height={size}
         >
-          {/*  <Board/> */}
-          {/*  <Square/> */}
+          <Board
+            unit={unit}
+            rows={rows}
+            size={size}
+          />
+          {/*<Square/>*/}
         </Stage>
       </div>
     ) // end return
