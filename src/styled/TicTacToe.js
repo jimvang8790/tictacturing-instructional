@@ -2,7 +2,11 @@ import React from 'react';
 import {Layer, Line} from 'react-konva';
 
 // specify the different parts of props that will be used in board
-export const Board = ({unit, size, rows}) => {
+export const Board = ({
+  unit,
+  size,
+  rows
+}) => {
 
   // initialize the grid variable that was reference on line 8 with empty array
   let grid = []
@@ -42,3 +46,22 @@ export const Board = ({unit, size, rows}) => {
     </Layer>
   ) // end return
 } // end const Board
+
+export const Squares = ({
+  unit,
+  coordinates,
+  gameState,
+  win,
+  gameOver,
+  yourTurn,
+  ownMark,
+  move
+}) => {
+  return (
+    <Layer>
+      <Text
+
+      />
+    </Layer>
+  ) // end return
+} // end const Squares
