@@ -3,7 +3,7 @@ import {Container, Name, GameListHeader, GameList, GameRecord, Column, ColumnLab
 
 class Profile extends Component {
 
-  // dumbie data
+  // dummy data
   static defaultProps = {
     user: {
       email: 'USER_EMAIL',
@@ -26,6 +26,31 @@ class Profile extends Component {
       ] // end game
     } // end user
   } // end static defaultProps
+
+  // connect all dummy data to list
+  get records() {
+    return this.props.user.games.map( (game, index) => {
+      return (
+        <GameRecord
+          key={index}
+          index={index}
+        >
+          <Column>
+            {(game.winner) ? 'Won!' : "Didn't win"}
+          </Column>
+          <Column>
+            "ROBOT"
+          </Column>
+          <Column>
+            "No"
+          </Column>
+          <Column>
+            {game.createdAt}
+          </Column>
+        </GameRecord>
+      )
+    }) // end return
+  } // end get records
 
   render() {
     let {email} = this.props.user
@@ -52,6 +77,7 @@ class Profile extends Component {
               Date
             </Column>
           </ColumnLabels>
+          {this.records}
         </GameList>
       </Container>
     ) // end return
