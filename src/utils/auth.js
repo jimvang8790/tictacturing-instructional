@@ -1,5 +1,5 @@
 import Auth0Lock from 'auth0-lock';
-const authDomin = 'jimvang.auth0.com';
+const authDomain = 'jimvang.auth0.com';
 const clientId = 'xY21jafBPZicUaHZqU1eU41VO7EkIio7';
 
 class AuthService {
