@@ -68,3 +68,7 @@ class AuthService {
   }; // end logout
 
 } // end AuthService
+
+const auth = new AuthService()
+
+export default auth
