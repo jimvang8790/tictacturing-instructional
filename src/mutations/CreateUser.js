@@ -19,7 +19,7 @@ export default class CreateUser extends Relay.Mutation {
 
   getFatQuery () {
     return Relay.QL`
-      fragment on CreateUserPayLoad {
+      fragment on CreateUserPayload {
         user
         viewer
       }
@@ -41,7 +41,7 @@ export default class CreateUser extends Relay.Mutation {
         type: 'REQUIRED_CHILDRED',
         children: [
           Relay.QL`
-            fragment on CreateUserPayLoad {
+            fragment on CreateUserPayload {
               user
             }
           `
