@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import NavDrawer from '../components/NavDrawer.js';
-import {Header, Main} from '../styled/Template'
+import {Header, Main} from '../styled/Template';
+import Relay from 'react-relay';
 
 injectTapEventPlugin();
 
@@ -25,15 +26,16 @@ class Template extends Component {
   } // end render
 } // end Template
 
-export default Template
-
-
-// import RaisedButton from 'material-ui/RaisedButton';
-// <header>
-//   <h1>TicTacTuring</h1>
-//   <RaisedButton
-//     label={'Test Button'}
-//     primary={true}
-//     onTouchTap={()=>{console.log('Hello, I work')}}
-//   />
-// </header>
+export default Relay.createContainer(
+  Template, {
+    fragments: {
+      viewer: () => Relay.QL`
+        fragments on Viewer {
+          user {
+            id
+          }
+        }
+      `,
+    } // end fragments
+  } // end Template
+) // end export
